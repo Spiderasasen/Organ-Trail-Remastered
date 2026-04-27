@@ -1,0 +1,48 @@
+Your goal is to survive the journey to Organ in about 50 in‑game days. Every day you will make choices, face random events, and try to keep your family alive. This is a text‑input game, so you will type commands to play.
+
+    CHOOSE YOUR CLASS
+    Before the journey begins, you pick one of three classes. Each one changes how your game plays out.
+
+Medic:
+
+    Better at treating sickness and injuries
+
+    Higher chance to save family members
+
+    Not very good at hunting
+
+Hunter:
+
+    Very good at hunting and can bring back lots of food
+
+    Higher chance of eating poisonous plants by mistake
+
+    Strong food production, risky survival
+
+Farmer:
+
+    Can identify safe plants and forage without getting poisoned
+
+    Higher chance of dying from medical problems
+
+    Good for steady food, weaker in emergencies
+
+    DAILY SURVIVAL
+    Each day you will face events like weather, sickness, broken wagon parts, hunting opportunities, and random dangers. Your choices affect your health, food, supplies, and how many days you can keep going.
+
+    TEXT COMMANDS
+    Type commands to take actions. Common commands include:
+
+travel  - move forward on the trail
+hunt    - try to gather food
+forage  - search for plants
+rest    - recover health
+status  - check your supplies, health, and days left
+help    - show available commands
+quit    - end the game
+
+    MANAGE YOUR RESOURCES
+    You must keep track of food, health, medicine, wagon durability, and the number of days remaining. Running out of any of these can end your journey early.
+
+    REACH ORGAN
+    If you survive long enough and make it to the end of the trail, you win. If not, the trail claims another traveler.
