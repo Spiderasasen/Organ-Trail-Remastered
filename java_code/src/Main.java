@@ -1,14 +1,21 @@
+import components.MainComponents;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 class Main{
     public static void main(String[] args) {
         //getting the scanner
         Scanner scan = new Scanner(System.in);
 
+        //importing other files
+        MainComponents components = new MainComponents();
+
         //main vars
         boolean flag = false;
         String[] options = {"1. Play", "2. How to Play", "3. Exit"};
+        ArrayList<String> howToPLay = components.fileReader("data/how_to_play.txt");
 
         //main game section
         while (!flag){
@@ -27,6 +34,9 @@ class Main{
                         break;
                     case 2:
                         System.out.println("How to play\n");
+                        for (String lines : howToPLay){
+                            System.out.println(lines);
+                        }
                         break;
                     case 3:
                         System.out.println("Exiting the game...\n");
