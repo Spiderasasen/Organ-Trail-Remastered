@@ -28,6 +28,7 @@ class Main{
             //seeing what the user chosed
             try{
                 int choice = scan.nextInt();
+                scan.nextLine();
                 switch (choice){
                     case 1:
                         System.out.println("Playing the game\n");
@@ -37,10 +38,12 @@ class Main{
                         for (String lines : howToPLay){
                             System.out.println(lines);
                         }
+                        components.pressEnter(scan);
                         break;
                     case 3:
                         System.out.println("Exiting the game...\n");
                         flag = true;
+                        scan.close();
                         break;
                     default:
                         System.out.println("Invalid choice.\n");

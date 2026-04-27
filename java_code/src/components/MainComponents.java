@@ -4,9 +4,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class MainComponents {
 
+    //file reader
     public ArrayList<String> fileReader(String fileName) {
         ArrayList<String> lines = new ArrayList<>();
 
@@ -22,5 +24,11 @@ public class MainComponents {
         }
 
         return lines;
+    }
+
+    //pressing enter to contuine
+    public void pressEnter(Scanner input){
+        System.out.println("Press enter to continue...");
+        input.nextLine();
     }
 }
