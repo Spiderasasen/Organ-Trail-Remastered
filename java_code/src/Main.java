@@ -25,10 +25,12 @@ class Main{
                 System.out.println(option);
             }
 
-            //seeing what the user chosed
+            //checking the user entered the right input
             try{
                 int choice = scan.nextInt();
                 scan.nextLine();
+
+                //seeing what the user has chosen
                 switch (choice){
                     case 1:
                         System.out.println("Playing the game\n");
