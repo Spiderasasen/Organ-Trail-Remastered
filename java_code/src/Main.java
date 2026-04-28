@@ -11,6 +11,7 @@ class Main{
 
         //importing other files
         MainComponents components = new MainComponents();
+        Game game = new Game();
 
         //main vars
         boolean flag = false;
@@ -33,7 +34,10 @@ class Main{
                 //seeing what the user has chosen
                 switch (choice){
                     case 1:
-                        System.out.println("Playing the game\n");
+                        //once the user plays the game, the game will end when its done. not making the user to mainly leave the game they finished the game
+                        game.mainGameArea();
+                        flag = true;
+                        scan.close();
                         break;
                     case 2:
                         System.out.println("How to play\n");
