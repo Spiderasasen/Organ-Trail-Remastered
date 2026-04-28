@@ -35,7 +35,7 @@ class Main{
                 switch (choice){
                     case 1:
                         //once the user plays the game, the game will end when its done. not making the user to mainly leave the game they finished the game
-                        game.mainGameArea();
+                        game.mainGameArea(scan);
                         flag = true;
                         scan.close();
                         break;
