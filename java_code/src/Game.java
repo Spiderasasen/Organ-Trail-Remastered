@@ -16,6 +16,6 @@ public class Game {
         charcter_class = selectionMenu.getCharcater();
 
         //making a family
-        makingFamily.makeFamily();
+        makingFamily.makeFamily(scan);
     }
 }

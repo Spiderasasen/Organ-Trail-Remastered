@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class MainComponents {
+import static components.Colors.RED;
+import static components.Colors.RESET;
 
+public class MainComponents {
     //file reader
     public ArrayList<String> fileReader(String fileName) {
         ArrayList<String> lines = new ArrayList<>();
@@ -20,7 +22,7 @@ public class MainComponents {
         }
         //if there is a problem reading the file, it will tell us that is had an error reading the file
         catch(Exception e){
-            System.out.println("Error in reading " + fileName);
+            System.out.println(RED + "Error in reading " + fileName + RESET);
         }
 
         return lines;
