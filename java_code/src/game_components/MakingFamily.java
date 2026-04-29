@@ -16,26 +16,63 @@ public class MakingFamily {
 
     //private vars
     private ArrayList<String> family_names = new ArrayList<>();
+    private String[] names = {"What is your name?", "What is the name of your Son?", "What is the name of your wife?", "What is the name of your daughter?", "What is the name of your Grandma?"};
 
     //main making the system
     public void makeFamily(Scanner scanner) {
         //asking the user if they want to set there own family names or not
         System.out.println("Would you like to name your own family? (y/n)");
-        String choice = scanner.next();
+        String choice = scanner.nextLine();
+        boolean flag = false;
 
-        //the user chose no
-        if (choice.equalsIgnoreCase("n")) {
-
-            //looping thougrh 5 (5 family members (2 males and 3 females))
-            for(int i = 0; i < 5; i++){
-                if (i <= 1){
-                    setFamily_names(randomSystem.randomArrayListIndex(male_names));
+        //loop for the first section
+        while (!flag) {
+            //the user chose no
+            if (choice.equalsIgnoreCase("n")) {
+                flag = true;
+                //looping thougrh 5 (5 family members (2 males and 3 females))
+                for(int i = 0; i < 5; i++){
+                    if (i <= 1){
+                        setFamily_names(randomSystem.randomArrayListIndex(male_names));
+                    }
+                    else{
+                        setFamily_names(randomSystem.randomArrayListIndex(female_names));
+                    }
                 }
-                else{
-                    setFamily_names(randomSystem.randomArrayListIndex(female_names));
-                }
+                System.out.println("This is your family: " + family_names);
             }
-            System.out.println("This is your family: " + family_names);
+            else if (choice.equalsIgnoreCase("y")) {
+                //looping to see what the user wants to name each family memeber
+                while(!flag){
+                    //for looping through the array of name options
+                    for (String name : names) {
+                        System.out.println(name);
+                        String inputName = scanner.nextLine();
+                        setFamily_names(inputName);
+                    }
+                    //checks if the user really likes the names they inputed
+                    boolean mini_flag = false;
+                    while(!mini_flag){ //made it where the user can only type yes or no. nothing else
+                        System.out.println(family_names + " \nAre these names ok? y/n");
+                        choice = scanner.nextLine();
+                        if (choice.equalsIgnoreCase("y")) {
+                            mini_flag = true;
+                            flag = true;
+                        }
+                        else if(choice.equalsIgnoreCase("n")){
+                            mini_flag = true;
+                        }
+                        else{
+                            System.out.println("Please enter Y/N");
+                        }
+                    }
+                    family_names.clear();
+                }
+
+            }
+            else {
+                System.out.println("Please enter y/n");
+            }
         }
     }
 
