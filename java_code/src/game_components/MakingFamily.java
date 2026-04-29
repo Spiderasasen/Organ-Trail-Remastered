@@ -5,8 +5,7 @@ import components.RandomSystem;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-import static components.Colors.RED;
-import static components.Colors.RESET;
+import static components.Colors.*;
 
 public class MakingFamily {
     //importing other components
@@ -47,7 +46,7 @@ public class MakingFamily {
                         setFamily_names(randomSystem.randomArrayListIndex(female_names));
                     }
                 }
-                System.out.println("This is your family: " + family_names);
+                System.out.println("This is your family: " + CYAN + family_names + RESET);
             }
             else if (choice.equalsIgnoreCase("y")) {
                 //looping to see what the user wants to name each family memeber
@@ -61,7 +60,7 @@ public class MakingFamily {
                     //checks if the user really likes the names they inputed
                     boolean mini_flag = false;
                     while(!mini_flag){ //made it where the user can only type yes or no. nothing else
-                        System.out.println(family_names + " \nAre these names ok? y/n");
+                        System.out.println("\n" + CYAN + family_names + RESET + " \nAre these names ok? y/n");
                         choice = scanner.nextLine();
                         if (choice.equalsIgnoreCase("y")) {
                             mini_flag = true;
@@ -69,17 +68,17 @@ public class MakingFamily {
                         }
                         else if(choice.equalsIgnoreCase("n")){
                             mini_flag = true;
+                            family_names.clear();
                         }
                         else{
-                            System.out.println("Please enter Y/N");
+                            System.out.println(RED + "Please enter Y/N" + RESET);
                         }
                     }
-                    family_names.clear();
                 }
 
             }
             else {
-                System.out.println("Please enter y/n");
+                System.out.println(RED + "Please enter y/n" + RESET);
             }
             setNames(family_names);
         }
