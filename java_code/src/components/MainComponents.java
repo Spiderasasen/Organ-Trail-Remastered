@@ -6,8 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static components.Colors.RED;
-import static components.Colors.RESET;
+import static components.Colors.*;
 
 public class MainComponents {
     //file reader
@@ -30,7 +29,7 @@ public class MainComponents {
 
     //pressing enter to contuine
     public void pressEnter(Scanner input){
-        System.out.println("Press enter to continue...");
+        System.out.println(CYAN + "Press enter to continue..." + RESET);
         input.nextLine();
     }
 }

@@ -4,6 +4,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+import static components.Colors.*;
+
 class Main{
     public static void main(String[] args) {
         //getting the scanner
@@ -35,29 +37,30 @@ class Main{
                 switch (choice){
                     case 1:
                         //once the user plays the game, the game will end when its done. not making the user to mainly leave the game they finished the game
+                        System.out.println("");
                         game.mainGameArea(scan);
                         flag = true;
                         scan.close();
                         break;
                     case 2:
-                        System.out.println("How to play\n");
+                        System.out.println(CYAN + "How to play\n" + RESET);
                         for (String lines : howToPLay){
                             System.out.println(lines);
                         }
                         components.pressEnter(scan);
                         break;
                     case 3:
-                        System.out.println("Exiting the game...\n");
+                        System.out.println(RED + "Exiting the game...\n" + RESET);
                         flag = true;
                         scan.close();
                         break;
                     default:
-                        System.out.println("Invalid choice.\n");
+                        System.out.println(RED + "Invalid choice.\n" + RESET);
                         break;
                 }
             }
             catch (InputMismatchException e){
-                System.out.println("Please enter a number\n");
+                System.out.println(RED + "Please enter a number\n" + RESET);
                 scan.nextLine();
             }
         }
