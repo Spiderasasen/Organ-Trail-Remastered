@@ -2,6 +2,9 @@ package game_components;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import static components.Colors.RED;
+import static components.Colors.RESET;
+
 public class SelectionMenu {
     //private vars
     private String charcater;
@@ -33,25 +36,26 @@ public class SelectionMenu {
                 scanner.nextLine();
                 switch (choice){
                     case 1:
-                        setCharcater("Hunter");
+                        setCharcater("Hunter\n");
                         flag = true;
                         break;
                     case 2:
-                        setCharcater("Medic");
+                        setCharcater("Medic\n");
                         flag = true;
                         break;
                     case 3:
-                        setCharcater("Farmer");
+                        setCharcater("Farmer\n");
                         flag = true;
                         break;
                     default:
-                        System.out.println("Invalid choice\n");
+                        System.out.println(RED + "Invalid choice\n" + RESET);
                         break;
                 }
+                System.out.println("");
             }
             //if not, it will yell at the user
             catch (InputMismatchException e){
-                System.out.println("Please enter a number\n");
+                System.out.println(RED +"Please enter a number\n" + RESET);
                 scanner.nextLine();
             }
         }
