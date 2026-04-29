@@ -5,6 +5,9 @@ import components.RandomSystem;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+import static components.Colors.RED;
+import static components.Colors.RESET;
+
 public class MakingFamily {
     //importing other components
     MainComponents  mainComponents =  new MainComponents();
@@ -17,6 +20,11 @@ public class MakingFamily {
     //private vars
     private ArrayList<String> family_names = new ArrayList<>();
     private String[] names = {"What is your name?", "What is the name of your Son?", "What is the name of your wife?", "What is the name of your daughter?", "What is the name of your Grandma?"};
+    private String player;
+    private String son;
+    private String wife;
+    private String daughter;
+    private String grandma;
 
     //main making the system
     public void makeFamily(Scanner scanner) {
@@ -73,6 +81,7 @@ public class MakingFamily {
             else {
                 System.out.println("Please enter y/n");
             }
+            setNames(family_names);
         }
     }
 
@@ -85,8 +94,25 @@ public class MakingFamily {
         family_names.add(name);
     }
 
+    public void setNames(ArrayList<String> names) {
+        if(names.size() != 5){
+            System.out.println(RED + "Invalid Length" + RESET);
+            return;
+        }
+        this.player = names.get(0);
+        this.son = names.get(1);
+        this.wife = names.get(2);
+        this.daughter = names.get(3);
+        this.grandma = names.get(4);
+    }
+
     //getter
     public ArrayList<String> getFamily_names() {
         return family_names;
     }
+    public String getPlayer() {return player;}
+    public String getSon() {return son;}
+    public String getWife() {return wife;}
+    public String getDaughter() {return daughter;}
+    public String getGrandma() {return grandma;}
 }
